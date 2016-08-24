@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="OLMPC">
   <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src="scripts/clientApp.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="vendors/bootstrap.min.css"></link>
     <link rel="stylesheet" href="/assets/sheetrock.css"></link>
-<h1>Olympic Races - localized</h1>
+    <!-- Scripts -->
+    <script type="text/javascript" src="vendors/angular.min.js"></script>
+    <script type="text/javascript" src="vendors/angular-route.min.js"></script>
+    <!-- Controllers -->
+    <script type="text/javascript" src="scripts/clientApp.js"></script>
 
-    <title>Hello</title>
+    <script type="text/javascript" src="scripts/controllers/baseController.js"></script>
+
+
   </head>
-  <body>
+  <body >
+      <main ng-view></main>
 
 
 
-<h1>It's me</h1>
 Source:
 http://www.nytimes.com/interactive/2016/08/18/sports/olympics/olympic-races-near-you.html?_r=0
   </body>

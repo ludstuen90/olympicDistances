@@ -11,26 +11,18 @@ app.use(bodyParser.json());
 //Static Page
 app.use( express.static('public'));
 
+//Strategy Inclusion
+var connection = require('./strategies/connection');
 
 // Route Inclusion
 
-var base = require('./routes/coffee');
+var base = require('./routes/base');
 
 app.use('/', base);
 
-//base url
-// router.get( '/', function ( req, res ){
-//   console.log( 'at base url' );
-//   // res.sendFile( path.resolve( 'views/index.html' ) );
-// });
-
-// router.get('/sunshine', function(req, res){
-//   console.log('hello');
-//   res.sendFile( path.resolve( 'public/views/index.html' ) );
-//
-// });
 
 // Spinning up the server
 app.listen(process.env.PORT || 3000, function(){
+  console.log('connection string is now', connection);
   console.log('listening on server 3000');
 });
