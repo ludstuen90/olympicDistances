@@ -6,8 +6,6 @@ var router = express.Router();
 var pg = require('pg');
 var connectionString = 'postgres://localhost:5432/olympicsrio';
 
-global.randomId = 1;
-
 router.get('/', function ( req,res ){
   res.sendFile(path.resolve('public/views/index.html'));
 });
@@ -21,9 +19,12 @@ router.post('/raceResult', function(req, res){
   console.log(global.randomId);
 
 
+
+
+
   var resultsOlympics= [];
     pg.connect(connectionString, function(err, client, done){
-      var search = ('SELECT * FROM results WHERE id=' + global.randomId);
+      var search = ('SELECT * FROM results ORDER BY RANDOM() LIMIT 1');
       var query1 = client.query(search);
       query1.on('row', function(row){
         resultsOlympics.push(row);
@@ -35,15 +36,7 @@ router.post('/raceResult', function(req, res){
         global.randomId++;
         return res.json(resultsOlympics);
       });
-
     });
-
-
-
-
-
 });
-
-
 
 module.exports = router;
