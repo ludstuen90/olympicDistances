@@ -7,8 +7,8 @@ OLMPC.config(['$routeProvider', function($routeProvider, $locationProvider) {
     templateUrl: 'views/content.html',
     controller: 'baseController'
   })
-  .when('/mango', {
-    templateUrl: 'views/mango.html',
+  .when('/about', {
+    templateUrl: 'views/about.html',
     controller: 'baseController'
   })
   .when('/home', {
