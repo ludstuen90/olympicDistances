@@ -18,10 +18,6 @@ router.get('/hello', function (req, res){
 router.post('/raceResult', function(req, res){
   console.log(global.randomId);
 
-
-
-
-
   var resultsOlympics= [];
     pg.connect(connectionString, function(err, client, done){
       var search = ('SELECT * FROM results ORDER BY RANDOM() LIMIT 1');
