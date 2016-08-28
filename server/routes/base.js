@@ -14,7 +14,6 @@ router.get('/hello', function (req, res){
   res.send(connectionString);
 });
 
-
 router.post('/raceResult', function(req, res){
   console.log(global.randomId);
 
